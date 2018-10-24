@@ -3,12 +3,3 @@
 import welcome from '..';
 
 welcome();
-
-
-
-
-
-
-
-
-
