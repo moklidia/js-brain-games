@@ -2,7 +2,7 @@
   "name": "bg_moklidia",
   "version": "1.0.0",
   "description": "My first project on Hexlet",
-  "main": "index.js",
+  "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -23,6 +23,10 @@
   "bugs": {
     "url": "https://github.com/lida-dusya/brain-games/issues"
   },
+   "keywords":[
+   "brain-games",
+   "hexlet",
+   ],
   "homepage": "https://github.com/lida-dusya/brain-games#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -30,5 +34,8 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0"
+  },
+  "dependencies": {
+    "readline-sync": "file:readline-sync"
   }
 }

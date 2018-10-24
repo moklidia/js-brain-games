@@ -1,9 +1,13 @@
-install: npm install
+install:
+	 npm install
 
-start: npx babel-node -- src/bin/brain-games.js
+start:
+	 npx babel-node -- src/bin/brain-games.js
 
-build:	rm -rf dist npm run build
+build:
+	rm -rf dist npm run build
 
-publish: npm publish
+publish:
+	 npm publish
 
 
