@@ -40,6 +40,6 @@
     "eslint-plugin-import": "^2.14.0"
   },
   "dependencies": {
-    "readline-sync": "git+https://github.com/anseki/readline-sync.git"
+    "readline-sync": "^1.4.9"
   }
 }
