@@ -12,8 +12,7 @@ const even = () => {
 
   for (let actualRound = 1; actualRound <= rounds; actualRound += 1) {
     const num = getRandomNum();
-
-    const question = console.log(`Question: ${num}`);
+    console.log(`Question: ${num}`);
 
     const userAnswer = readlineSync.question('Your answer:');
 
@@ -27,7 +26,7 @@ const even = () => {
       return;
     }
   }
-    console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default even;
