@@ -1,43 +1,26 @@
-import readlineSync from 'readline-sync';
+import { cons } from 'hexlet-pairs';
+import playGame from '../game-flow';
 import { getRandomNum, getRandomOp } from '../numbers';
 
+const task = 'What is the result of the expression?';
 
-const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
+const currentOp = getRandomOp();
+const num1 = getRandomNum();
+const num2 = getRandomNum();
 
-  const userName = readlineSync.question('May I have your name?');
-  console.log(`Hello ${userName}!`);
+const getQuestion = `${num1}${currentOp}${num2}`;
 
-  const rounds = 3;
-
-  for (let actualRound = 1; actualRound <= rounds; actualRound += 1) {
-    const num1 = getRandomNum();
-
-    const num2 = getRandomNum();
-
-    const currentOp = getRandomOp();
-
-    const question = console.log(`Question: ${num1}${currentOp}${num2}`);
-
-    const userAnswer = readlineSync.question('Your answer:');
-
-    let rightAnswer;
+let rightAnswer;
     switch (currentOp) {
-      case '+': rightAnswer = String(num1 + num2); break;
-      case '-': rightAnswer = String(num1 - num2); break;
-      default: rightAnswer = String(num1 * num2); break;
+      case '+': rightAnswer = num1 + num2; break;
+      case '-': rightAnswer = num1 - num2; break;
+      default: rightAnswer = num1 * num2; break;
     }
 
-    if (userAnswer === rightAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
-};
+const getRightAnswer = rightAnswer;
+	
+const gameData = cons(getQuestion, getRightAnswer);
 
-export default calc;
+const playCalc = () => playGame(task, gameData);
+
+export default playCalc;
