@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import getRandomNum from './numbers';
+import { getRandomNum } from './numbers';
 
 const even = () => {
   console.log('Welcome to the Brain Games!');
@@ -11,12 +11,13 @@ const even = () => {
   const rounds = 3;
 
   for (let actualRound = 1; actualRound <= rounds; actualRound += 1) {
-    const num = getRandomNum();
-    console.log(`Question: ${num}`);
+    const question = getRandomNum();
+    console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer:');
+    const isEven = num => (num % 2 === 0);
 
-    const rightAnswer = (num % 2 === 0) ? 'yes' : 'no';
+    const rightAnswer = isEven(question) ? 'yes' : 'no';
 
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
