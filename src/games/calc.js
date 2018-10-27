@@ -4,11 +4,10 @@ import { getRandomNum, getRandomOp } from '../numbers';
 
 const task = 'What is the result of the expression?';
 
-const currentOp = getRandomOp();
-
 const playRound = () => {
   const num1 = getRandomNum();
   const num2 = getRandomNum();
+  const currentOp = getRandomOp();
 
   const getQuestion = `${num1}${currentOp}${num2}`;
 
