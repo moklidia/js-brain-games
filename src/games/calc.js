@@ -5,10 +5,11 @@ import { getRandomNum, getRandomOp } from '../numbers';
 const task = 'What is the result of the expression?';
 
 const currentOp = getRandomOp();
-const num1 = getRandomNum();
-const num2 = getRandomNum();
 
 const playRound = () => {
+  const num1 = getRandomNum();
+  const num2 = getRandomNum();
+
   const getQuestion = `${num1}${currentOp}${num2}`;
 
   let rightAnswer;
@@ -22,6 +23,6 @@ const playRound = () => {
   return cons(getQuestion, getRightAnswer);
 };
 
-const playCalc = () => playGame(task, playRound());
+const playCalc = () => playGame(task, playRound);
 
 export default playCalc;

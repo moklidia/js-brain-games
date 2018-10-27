@@ -11,10 +11,11 @@ const playGame = (task, playRound) => {
   const rounds = 3;
 
   for (let actualRound = 1; actualRound <= rounds; actualRound += 1) {
-    const questionData = car(playRound);
+    const game = playRound();
+    const questionData = car(game);
     console.log(`Question: '${questionData}'`);
     const userAnswer = readlineSync.question('Your answer:');
-    const rightAnswer = String(cdr(playRound));
+    const rightAnswer = String(cdr(game));
 
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
