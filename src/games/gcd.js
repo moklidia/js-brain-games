@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import playGame from '../game-flow';
-import { getRandomNum } from '../utils';
+import getRandomNum from '../utils';
 
 const task = 'Find the greatest common divisor of given numbers.';
 

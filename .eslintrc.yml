@@ -1,4 +1,4 @@
---
+---
 
 plugins:
   # https://github.com/babel/eslint-plugin-babel
@@ -7,7 +7,6 @@ plugins:
 # https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   node: true
-  
 
 # https://github.com/babel/babel-eslint
 parser: babel-eslint
@@ -17,5 +16,3 @@ extends:
 
 rules:
   no-console: 0
-
-
