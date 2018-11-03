@@ -14,9 +14,9 @@ const getGCD = (a, b) => {
 const playRound = () => {
   const num1 = getRandomNum();
   const num2 = getRandomNum();
-  const getQuestion = `${num1} ${num2}`;
-  const getRightAnswer = getGCD(num1, num2);
-  return cons(getQuestion, getRightAnswer);
+  const question = `${num1} ${num2}`;
+  const rightAnswer = getGCD(num1, num2);
+  return cons(question, rightAnswer);
 };
 
 const playGcd = () => playGame(task, playRound);

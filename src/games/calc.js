@@ -1,15 +1,20 @@
 import { cons } from 'hexlet-pairs';
 import playGame from '../game-flow';
-import { getRandomNum, getRandomOp } from '../numbers';
+import { getRandomNum } from '../utils';
 
 const task = 'What is the result of the expression?';
 
+const getRandomOp = () => {
+  const operators = ['+', '-', '*'];
+  const randomIndex = Math.floor(Math.random() * operators.length);
+  return operators[randomIndex];
+};
 const playRound = () => {
   const num1 = getRandomNum();
   const num2 = getRandomNum();
   const currentOp = getRandomOp();
 
-  const getQuestion = `${num1}${currentOp}${num2}`;
+  const question = `${num1}${currentOp}${num2}`;
 
   let rightAnswer;
   switch (currentOp) {
@@ -18,8 +23,7 @@ const playRound = () => {
     default: rightAnswer = num1 * num2; break;
   }
 
-  const getRightAnswer = rightAnswer;
-  return cons(getQuestion, getRightAnswer);
+  return cons(question, rightAnswer);
 };
 
 const playCalc = () => playGame(task, playRound);
