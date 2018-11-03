@@ -3,11 +3,11 @@ import playGame from '../game-flow';
 import getRandomNum from '../utils';
 
 const task = '';
+const length = 10;
 
 const playRound = () => {
   const num = getRandomNum();
   const step = Math.floor(Math.random() * 10);
-  const length = 10;
   const progression = [];
   for (let i = 1; i <= length; i += 1) {
     progression.push(num + i * step);
@@ -18,7 +18,6 @@ const playRound = () => {
 
   const question = `What number is missing in this progression?
 ${progression.join(' ')}`;
-
 
   return cons(question, rightAnswer);
 };
