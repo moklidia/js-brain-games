@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import playGame from '../game-flow';
-import { getRandomNum } from '../numbers';
+import { getRandomNum } from '../utils';
 
 const task = 'Answer "yes" if number even otherwise answer "no".';
 
