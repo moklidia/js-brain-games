@@ -2,26 +2,23 @@ import { cons } from 'hexlet-pairs';
 import playGame from '../game-flow';
 import getRandomNum from '../utils';
 
-const task = '';
+const task = 'What number is missing in this progression?';
 const length = 10;
 
 const playRound = () => {
-  const num = getRandomNum();
-  const step = Math.floor(Math.random() * 10);
+  const firstNum = getRandomNum(1, 100);
+  const step = getRandomNum(1, 10);
   const progression = [];
   for (let i = 1; i <= length; i += 1) {
-    progression.push(num + i * step);
+    progression.push(firstNum + i * step);
   }
-  const randomIndex = Math.floor(Math.random() * 10);
-  const rightAnswer = progression[randomIndex];
-  progression[randomIndex] = '..';
+  const hiddenElementPosition = getRandomNum(1, length);
+  const rightAnswer = progression[hiddenElementPosition];
+  progression[hiddenElementPosition] = '..';
 
-  const question = `What number is missing in this progression?
-${progression.join(' ')}`;
+  const question = `${progression.join(' ')}`;
 
   return cons(question, rightAnswer);
 };
 
-const playCalc = () => playGame(task, playRound);
-
-export default playCalc;
+export default () => playGame(task, playRound);
