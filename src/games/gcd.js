@@ -12,13 +12,11 @@ const getGCD = (a, b) => {
 };
 
 const playRound = () => {
-  const num1 = getRandomNum();
-  const num2 = getRandomNum();
+  const num1 = getRandomNum(1, 50);
+  const num2 = getRandomNum(1, 50);
   const question = `Question: ${num1} ${num2}`;
   const rightAnswer = getGCD(num1, num2);
   return cons(question, rightAnswer);
 };
 
-const playGcd = () => playGame(task, playRound);
-
-export default playGcd;
+export default () => playGame(task, playRound);

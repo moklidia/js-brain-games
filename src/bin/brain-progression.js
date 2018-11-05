@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import playProgression from '../games/progression';
+import playGame from '../games/progression';
 
-playProgression();
+playGame();

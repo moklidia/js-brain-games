@@ -10,8 +10,8 @@ const getRandomOp = () => {
   return operators[randomIndex];
 };
 const playRound = () => {
-  const num1 = getRandomNum();
-  const num2 = getRandomNum();
+  const num1 = getRandomNum(1, 50);
+  const num2 = getRandomNum(1, 50);
   const currentOp = getRandomOp();
 
   const question = `Question: ${num1}${currentOp}${num2}`;
@@ -26,6 +26,4 @@ const playRound = () => {
   return cons(question, rightAnswer);
 };
 
-const playCalc = () => playGame(task, playRound);
-
-export default playCalc;
+export default () => playGame(task, playRound);

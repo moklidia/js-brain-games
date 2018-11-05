@@ -8,27 +8,19 @@ const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
-
-  let i = 2;
-
-  while (i <= num / 2) {
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
-    i += 1; // вместо i++;
   }
-
   return true;
 };
 
-
 const playRound = () => {
-  const randomNum = getRandomNum();
+  const randomNum = getRandomNum(1, 50);
   const question = `Question: ${randomNum}`;
   const rightAnswer = isPrime(randomNum) ? 'yes' : 'no';
 
   return cons(question, rightAnswer);
 };
-const playPrime = () => playGame(task, playRound);
-
-export default playPrime;
+export default () => playGame(task, playRound);

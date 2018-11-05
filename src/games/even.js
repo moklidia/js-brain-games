@@ -7,12 +7,10 @@ const task = 'Answer "yes" if number even otherwise answer "no".';
 const isEven = num => (num % 2 === 0);
 
 const playRound = () => {
-  const randomNum = getRandomNum();
+  const randomNum = getRandomNum(1, 100);
   const question = `Question: ${randomNum}`;
   const rightAnswer = isEven(randomNum) ? 'yes' : 'no';
 
   return cons(question, rightAnswer);
 };
-const playEven = () => playGame(task, playRound);
-
-export default playEven;
+export default () => playGame(task, playRound);
