@@ -13,7 +13,7 @@ const playGame = (task, playRound) => {
   for (let actualRound = 1; actualRound <= rounds; actualRound += 1) {
     const game = playRound();
     const questionData = car(game);
-    console.log(questionData);
+    console.log(`Question: ${questionData}`);
     const userAnswer = readlineSync.question('Your answer:');
     const rightAnswer = String(cdr(game));
 

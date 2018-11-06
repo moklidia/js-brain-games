@@ -8,7 +8,7 @@ const isEven = num => (num % 2 === 0);
 
 const playRound = () => {
   const randomNum = getRandomNum(1, 100);
-  const question = `Question: ${randomNum}`;
+  const question = `${randomNum}`;
   const rightAnswer = isEven(randomNum) ? 'yes' : 'no';
 
   return cons(question, rightAnswer);

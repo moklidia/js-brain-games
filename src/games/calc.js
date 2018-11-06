@@ -14,7 +14,7 @@ const playRound = () => {
   const num2 = getRandomNum(1, 50);
   const currentOp = getRandomOp();
 
-  const question = `Question: ${num1}${currentOp}${num2}`;
+  const question = `${num1}${currentOp}${num2}`;
 
   let rightAnswer;
   switch (currentOp) {
